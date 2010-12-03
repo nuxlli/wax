@@ -394,7 +394,7 @@ protected:
 	static void ConvertUTF32ToUTF8( unsigned long input, char* output, int* length );
 
 private:
-	TiXmlBase( const TiXmlBase& );				// not implemented.
+	//TiXmlBase( const TiXmlBase& );				// not implemented.
 	void operator=( const TiXmlBase& base );	// not allowed.
 
 	struct Entity
@@ -877,7 +877,7 @@ public:
 	void SetDocument( TiXmlDocument* doc )	{ document = doc; }
 
 private:
-	TiXmlAttribute( const TiXmlAttribute& );				// not implemented.
+	//TiXmlAttribute( const TiXmlAttribute& );				// not implemented.
 	void operator=( const TiXmlAttribute& base );	// not allowed.
 
 	TiXmlDocument*	document;	// A pointer back to a document, for error reporting.
