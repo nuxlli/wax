@@ -150,6 +150,17 @@ matchers = {
     return true
   end;
   
+  should_not_match = function(value, pattern)
+    if type(value) ~= 'string' then
+      return false, "type error, should_match expecting target as string"
+    end
+    
+    if string.match(value, pattern) then
+      return false, value .. " match pattern ".. pattern
+    end
+    return true
+  end;
+  
   should_be_kind_of = function(value, class)
     if type(value) == "userdata" then
 
