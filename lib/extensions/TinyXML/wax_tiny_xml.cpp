@@ -62,6 +62,7 @@ void waxwrapper_tinyxml() {
 		.set< TiXmlElement, TiXmlAttribute* >("firstAttribute", &TiXmlElement::FirstAttribute)
 		.set< TiXmlElement, TiXmlAttribute* >("lastAttribute", &TiXmlElement::LastAttribute)
 		.set< TiXmlElement, void, const char*>("removeAttribute", &TiXmlElement::RemoveAttribute)
+		.set< TiXmlElement, void, const char*, const char*>("setAttribute", &TiXmlElement::SetAttribute)
 		.set("getText", &TiXmlElement::GetText)
 	;
 	
