@@ -122,16 +122,21 @@ static void createTable(lua_State *L, xmlNode *node, char *textLabel, char *attr
                 break;
             }
             case XML_TEXT_NODE:
+			case XML_CDATA_SECTION_NODE:
                 if (xmlIsBlankNode(node)) continue;
                 
                 lua_pushstring(L, textLabel);
                 lua_pushstring(L, (const char *)node->content);
                 lua_rawset(L, -3);
                 
-                break;                
+                break;
+            
+			case XML_COMMENT_NODE:
+				break;
+				
             default:
                 // I have no idea what these things are... XML is for weirdos
-                luaL_error(L, "UNKNOWN NODE TYPE %d", node->type);
+                printf("UNKNOWN NODE TYPE %d WITH %s AND %s", node->type, node->name, node->content);
                 break;
         }
     }
