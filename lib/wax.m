@@ -167,6 +167,9 @@ static void addGlobals(lua_State *L) {
     lua_pushcfunction(L, exitApp);
     lua_setglobal(L, "exitApp");
     
+	lua_pushstring(L, [NSTemporaryDirectory() UTF8String]);
+	lua_setglobal(L, "NSTemporaryDirectory");
+	
     lua_pushstring(L, [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] UTF8String]);
     lua_setglobal(L, "NSDocumentDirectory");
     
