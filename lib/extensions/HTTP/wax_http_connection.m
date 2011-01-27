@@ -227,6 +227,11 @@
     
     _finished = YES;
     
+    // Release internals objects
+    [_data release];
+    [_request release];
+    self.response = nil;
+    
     END_STACK_MODIFY(L, 3)
 }
 
